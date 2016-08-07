@@ -1,0 +1,5 @@
+My own error print routine for C apps.
+Allows warning / error messages with programm exit or not.
+Variable arguments like in printf.
+Resolves system error codes in to string.
+Comes in ANSI / UNICODE flavors for Windows and a flavor for UNIX.
