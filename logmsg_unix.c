@@ -1,5 +1,3 @@
-// logmsg - output to stdout prefixed with current time
-
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
