@@ -33,6 +33,7 @@ void logmsg(int s, char *msg, ...) {
     if(s)
         printf(" [%s]", strerror(errno));
     putchar('\n');
+    fsync(STDOUT_FILENO);
     if(s==ERROR)
         exit(1);
 }
