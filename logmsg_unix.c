@@ -40,7 +40,7 @@ int main() {
 
     logmsg(ERROR, "oh %s %c", "shit", '!');
 
-    logmsg(INFO, "hello %s %c", "world", '!'); 
+    logmsg(INFO, "this did not happen"); 
     
     return 0;
 }
