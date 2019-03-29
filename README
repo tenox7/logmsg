@@ -1,4 +1,4 @@
-My own error print routine for C apps.
+Example info / warning / error print routine for C apps.
 Allows warning / error messages with programm exit or not.
 Variable arguments like in printf.
 Resolves system error codes in to string.
