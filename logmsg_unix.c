@@ -11,11 +11,11 @@ void logmsg(int s, char *msg, ...) {
     time_t t;
     struct tm *l;
     char *err[] = { "", " WARNING:", " ERROR:" };
-    char hostname[255]={0};
+    char hostname[256]={0};
     
     time(&t); 
     l=localtime(&t);
-    gethostname(hostname, 255);
+    gethostname(hostname, sizeof(hostname)*sizeof(char));
     if(s>2) s=2;
     if(s<0) s=0;
     printf("%04d/%02d/%02d %02d:%02d:%02d %s:%s ", 
@@ -30,6 +30,7 @@ void logmsg(int s, char *msg, ...) {
     if(s==2)
         exit(1);
 }
+
 
 int main() {
 
