@@ -16,8 +16,8 @@ void logmsg(int s, char *msg, ...) {
     time(&t); 
     l=localtime(&t);
     gethostname(hostname, 255);
-    if(s>2)
-        s=2;
+    if(s>2) s=2;
+    if(s<0) s=0;
     printf("%04d/%02d/%02d %02d:%02d:%02d %s:%s ", 
         l->tm_year+1900, l->tm_mon+1, l->tm_mday, 
         l->tm_hour, l->tm_min, l->tm_sec, 
