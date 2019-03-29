@@ -1,8 +1,12 @@
+// logmsg - output to stdout prefixed with current time
+
 #include <stdio.h>
+#include <string.h>
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <time.h>
+#include <errno.h>
 
 enum { INFO, WARNING, ERROR };
 
@@ -26,17 +30,20 @@ void logmsg(int s, char *msg, ...) {
     va_start(ap, msg);
     vprintf(msg, ap);
     va_end(ap);
+    if(s)
+        printf(" [%s]", strerror(errno));
     putchar('\n');
-    if(s==2)
+    if(s==ERROR)
         exit(1);
 }
-
 
 int main() {
 
     logmsg(INFO, "hello %s %c", "world", '!');
 
     logmsg(WARNING, "oh %s %c", "no", '!');
+
+    fopen("/dev/mem", "w");    
 
     logmsg(ERROR, "oh %s %c", "shit", '!');
 
