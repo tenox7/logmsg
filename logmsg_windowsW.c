@@ -36,7 +36,7 @@ void logmsg(int s, LPWSTR msg, ...) {
             wprintf(L" [%s (0x%08X)]", errBuff, e);
         }
     }
-    putchar(L'\n');
+    putwchar(L'\n');
     if(s==LERROR)
         ExitProcess(1);
 }
