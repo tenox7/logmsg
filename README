@@ -3,4 +3,4 @@ Example functions that print info / warning / error messages for C apps.
 Variable arguments like in printf.
 Allows warning / error messages with programm exit or not.
 Resolves system error codes in to string.
-Comes in ANSI / UNICODE flavors for Windows and a flavor for UNIX.
+For Windows and UNIX.
