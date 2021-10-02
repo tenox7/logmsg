@@ -31,7 +31,7 @@ void logmsg(int s, LPWSTR msg, ...) {
 
     if (e = GetLastError()) {
         FormatMessageW(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_MAX_WIDTH_MASK,
-            NULL, e, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), errBuff, sizeof(errBuff)/sizeof(WCHAR), NULL);
+            NULL, e, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), errBuff, ARRAYSIZE(errBuff), NULL);
         wprintf(L" [%s (0x%08X)]", errBuff, e);
     }
 
